@@ -1,0 +1,19 @@
+{
+  "Name": "BT_CustomWeaponTicks",
+  "Version": "1.0.0.0",
+  "Description": "Changes the size of the weapon ticks preview in combat.",
+  "Author": "NBK_RedSpy",
+  "Website": "https://github.com/NBKRedSpy/BtShowXp",
+
+  "Enabled": true,
+
+  "DLL": "BT_CustomWeaponTicks.dll",
+
+  "Settings": {
+    "xScale": 2,
+    "yScale": 2,
+    "zScale": 1,
+    "maxIndividualScale":  2,
+  }
+
+}
