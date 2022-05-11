@@ -3,7 +3,7 @@ Customizes the size of the weapon range ticks in combat.
 
 The width and height can be modified to make the pips easier to see.
 
-The mod defaults to about 4x larger than the game's default.  This is configurable in the mod.json file.
+The mod defaults to about 4x larger than the game's default, but is configurable in the mod.json file.
 
 ![image](https://user-images.githubusercontent.com/54865934/167947273-ab277ec1-ae9b-444a-9f00-e3782e6a5d56.png)
 
