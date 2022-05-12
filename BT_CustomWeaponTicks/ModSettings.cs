@@ -8,10 +8,10 @@ namespace BT_CustomWeaponTicks
 {
     public class ModSettings
     {
-        public float xScale { get; set; } = 2;
-        public float yScale { get; set; } = 2;
-        public float zScale { get; set; } = 1;
-        public float maxIndividualScale { get; set; } = 2;
+        public float xScale { get; set; } = -1f;
+        public float yScale { get; set; } = 1.5f;
+        public float zScale { get; set; } = 1f;
+        public float maxIndividualScale { get; set; } = 2f;
 
     }
 }
