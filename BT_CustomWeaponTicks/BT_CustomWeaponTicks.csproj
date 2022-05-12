@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
-    <Compile Include="Init.cs" />
+    <Compile Include="HarmonyInit.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="Patches\ChangeTickScale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

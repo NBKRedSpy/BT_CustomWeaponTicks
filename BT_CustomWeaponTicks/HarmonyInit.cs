@@ -9,17 +9,15 @@ using System.Threading.Tasks;
 
 namespace BT_CustomWeaponTicks
 {
-    public static class Init
+    public static class HarmonyInit
     {
-        public static void HarmonyInit(string directory, string settingsJSON)
+        public static void Init(string directory, string settingsJSON)
         {
-            ModSettings modSettings = Newtonsoft.Json.JsonConvert.DeserializeObject<ModSettings>(settingsJSON);
+            ModSettings modSettings = JsonConvert.DeserializeObject<ModSettings>(settingsJSON);
             Core.ModSettings = modSettings;
 
             var harmony = HarmonyInstance.Create("io.github.nbk_redspy.BT_CustomWeaponTicks");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-
-            Core.ModSettings = JsonConvert.DeserializeObject<ModSettings>(settingsJSON);
         }
     }
 }
