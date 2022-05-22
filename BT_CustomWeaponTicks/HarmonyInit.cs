@@ -18,6 +18,8 @@ namespace BT_CustomWeaponTicks
 
             var harmony = HarmonyInstance.Create("io.github.nbk_redspy.BT_CustomWeaponTicks");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            Logger.Clear();
         }
     }
 }

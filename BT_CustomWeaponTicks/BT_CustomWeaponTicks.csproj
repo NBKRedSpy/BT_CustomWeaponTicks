@@ -64,8 +64,10 @@
   <ItemGroup>
     <Compile Include="Core.cs" />
     <Compile Include="HarmonyInit.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="Patches\ChangeTickScale.cs" />
+    <Compile Include="Patches\TickColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
