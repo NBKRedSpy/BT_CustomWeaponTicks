@@ -42,16 +42,11 @@ namespace BT_CustomWeaponTicks.Patches
 
                     if (SelectNextTickColor.WasReleased)
                     {
-                        Logger.Log("Key fired");
-
                         if (Core.ModSettings.ColorSets.Count == 0) return;
 
                         ColorSet colorSet = Core.ModSettings.ColorSets.Next();
 
                         colorSet.SetTickColors(__instance);
-
-                        //Debug
-                        Logger.Log("Set complete");
                         
                     }
                 }
@@ -76,7 +71,6 @@ namespace BT_CustomWeaponTicks.Patches
                             var adapter = new DynamicActionsAdapter(__result);
                             SelectNextTickColor = adapter.CreatePlayerAction("Select next tick color");
                             SelectNextTickColor.AddDefaultBinding(Core.ModSettings.NextColorKeyBinding.Keys);
-                            Logger.Log("Keybind added");
                     }
                 }
                     catch (Exception e)

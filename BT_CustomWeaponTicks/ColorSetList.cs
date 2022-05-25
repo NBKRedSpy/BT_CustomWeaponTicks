@@ -12,7 +12,7 @@ namespace BT_CustomWeaponTicks
 
         public ColorSet Next()
         {
-            CurrentIndex = CurrentIndex++ % this.Count;
+            CurrentIndex = (CurrentIndex + 1) % this.Count;
             return this[CurrentIndex];
 
         }
