@@ -13,6 +13,9 @@ namespace BT_CustomWeaponTicks.Patches
     [HarmonyPatch(typeof(CombatHUDWeaponTickMarks), "UpdateTicksShown")]
     public static class TickColor
     {
+
+        public static bool ColorInited { get; set; } = false;
+
         public static Biome.BIOMESKIN? LastBiome { get; set; } //The last biome that was loaded.
 
 
@@ -21,9 +24,14 @@ namespace BT_CustomWeaponTicks.Patches
 
             try
             {
-
-                //Reset if no colors
+                //Exit if no colors defined.
                 if (Core.ModSettings.ColorSets.Count == 0) return;
+
+                if (ColorInited == false)
+                {
+                    Core.ModSettings.ColorSets[0].SetTickColors(___uiManager);
+                    ColorInited = true;
+                }
 
                 Biome.BIOMESKIN currentBiome = UnityGameInstance.BattleTechGame.Combat.ActiveContract.ContractBiome;
 
@@ -32,17 +40,16 @@ namespace BT_CustomWeaponTicks.Patches
                     return;
                 }
 
-                UIColorRef colorRef = new UIColorRef()
-                {
-                    color = Color.blue,
-                    UIColor = UIColor.Custom,
-                };
 
-                Logger.Log($"After color creation.  UiManager {___uiManager == null}");
+                //debug
+                //UIColorRef colorRef = new UIColorRef()
+                //{
+                //    color = Color.blue,
+                //    UIColor = UIColor.Custom,
+                //};
+                // ___uiManager.UILookAndColorConstants.TickMarkOptimal = colorRef;
 
-                ___uiManager.UILookAndColorConstants.TickMarkOptimal = colorRef;
-
-                Logger.Log($"Color set ");
+                //Logger.Log($"Color set ");
 
             }
             catch (Exception ex)

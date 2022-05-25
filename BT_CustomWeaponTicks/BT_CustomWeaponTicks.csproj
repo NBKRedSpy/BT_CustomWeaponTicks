@@ -67,7 +67,8 @@
   <ItemGroup>
     <Compile Include="ColorSet.cs" />
     <Compile Include="ColorSetList.cs" />
-    <Compile Include="KeyBindingsPatch.cs" />
+    <Compile Include="JsonConverters\ColorConverter.cs" />
+    <Compile Include="Patches\KeyBindingsPatch.cs" />
     <Compile Include="KeyBindingSetting.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="HarmonyInit.cs" />

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BT_CustomWeaponTicks
+namespace BT_CustomWeaponTicks.Patches
 {
     public class KeyBindingsPatch
     {
@@ -42,11 +42,17 @@ namespace BT_CustomWeaponTicks
 
                     if (SelectNextTickColor.WasReleased)
                     {
+                        Logger.Log("Key fired");
+
                         if (Core.ModSettings.ColorSets.Count == 0) return;
 
                         ColorSet colorSet = Core.ModSettings.ColorSets.Next();
 
                         colorSet.SetTickColors(__instance);
+
+                        //Debug
+                        Logger.Log("Set complete");
+                        
                     }
                 }
                 catch (Exception ex)

@@ -1,4 +1,5 @@
-﻿using Harmony;
+﻿using BT_CustomWeaponTicks.JsonConverters;
+using Harmony;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,21 @@ namespace BT_CustomWeaponTicks
     {
         public static void Init(string directory, string settingsJSON)
         {
-            ModSettings modSettings = JsonConvert.DeserializeObject<ModSettings>(settingsJSON);
-            Core.ModSettings = modSettings;
 
-            var harmony = HarmonyInstance.Create("io.github.nbk_redspy.BT_CustomWeaponTicks");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            try
+            {
+                ModSettings modSettings = JsonConvert.DeserializeObject<ModSettings>(settingsJSON, new ColorConverter());
+                Core.ModSettings = modSettings;
 
-            Logger.Clear();
+                var harmony = HarmonyInstance.Create("io.github.nbk_redspy.BT_CustomWeaponTicks");
+                harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(ex);
+                throw;
+            }        
         }
     }
 }

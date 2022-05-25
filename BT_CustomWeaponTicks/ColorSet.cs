@@ -25,6 +25,15 @@ namespace BT_CustomWeaponTicks
             uiManager.UILookAndColorConstants.TickMarkTargetedOptimal.color = TickMarkTargetedOptimal;
             uiManager.UILookAndColorConstants.TickMarkTargetedNonOptimal.color = TickMarkTargetedNonOptimal;
 
+            //debgug
+            Logger.LogJson(new
+            {
+                TickMarkOptimal = uiManager.UILookAndColorConstants.TickMarkOptimal.color.ToString(),
+                TickMarkNonOptimal = uiManager.UILookAndColorConstants.TickMarkNonOptimal.color.ToString(),
+                TickMarkTargetedOptimal = uiManager.UILookAndColorConstants.TickMarkTargetedOptimal.color.ToString(),
+                TickMarkTargetedNonOptimal = uiManager.UILookAndColorConstants.TickMarkTargetedNonOptimal.color.ToString(),
+            });
+
         }
 
     }

@@ -20,7 +20,7 @@
     },
     "colorSets": [
       {
-        "Description" : "Default"
+        "Description" : "Default",
         "TickMarkOptimal": [ 247, 155, 38 ],
         "TickMarkNonOptimal": [ 161, 161, 161 ],
         "TickMarkTargetedOptimal": [ 240, 66, 40 ],
