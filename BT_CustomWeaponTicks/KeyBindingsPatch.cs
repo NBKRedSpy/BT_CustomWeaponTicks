@@ -30,16 +30,21 @@ namespace BT_CustomWeaponTicks
         [HarmonyPatch(typeof(UIManager), "Update")]
         public static class UIManager_Patch
         {
-            public static bool Prefix(UIManager __instance)
+            public static void Prefix(UIManager __instance)
             {
-                if (!Core.ModSettings.NextColorKeyBinding.Active) return true;
-
-                if (SelectNextLineOfFireColor.WasReleased)
+                try
                 {
-                    Logger.Log ($"Key bind executed");
-                }
+                    if (!Core.ModSettings.NextColorKeyBinding.Active) return;
 
-                return true;
+                    if (SelectNextLineOfFireColor.WasReleased)
+                    {
+                        Logger.Log($"Key bind executed");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log(ex);
+                }
             }
         }
 
@@ -49,20 +54,22 @@ namespace BT_CustomWeaponTicks
         {
             public static void Postfix(DynamicActions __result)
             {
-                if (Core.ModSettings.NextColorKeyBinding.Active)
+
+                try
                 {
-                    try
+                    if (Core.ModSettings.NextColorKeyBinding.Active)
                     {
-                        var adapter = new DynamicActionsAdapter(__result);
-                        SelectNextLineOfFireColor = adapter.CreatePlayerAction("Select next tick color");
-                        SelectNextLineOfFireColor.AddDefaultBinding(Core.ModSettings.NextColorKeyBinding.Keys);
-                        Logger.Log("Keybind added");
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Log(e);
+                            var adapter = new DynamicActionsAdapter(__result);
+                            SelectNextLineOfFireColor = adapter.CreatePlayerAction("Select next tick color");
+                            SelectNextLineOfFireColor.AddDefaultBinding(Core.ModSettings.NextColorKeyBinding.Keys);
+                            Logger.Log("Keybind added");
                     }
                 }
+                    catch (Exception e)
+                {
+                    Logger.Log(e);
+                }
+
             }
         }
 
