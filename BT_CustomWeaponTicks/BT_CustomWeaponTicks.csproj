@@ -39,6 +39,9 @@
       <HintPath>E:\Games\Steam\steamapps\common\BATTLETECH\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="InControl">
+      <HintPath>E:\Games\Steam\steamapps\common\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Games\Steam\steamapps\common\BATTLETECH\BattleTech_Data\Managed\Newtonsoft.Json.dll</HintPath>
@@ -62,12 +65,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyBindingsPatch.cs" />
+    <Compile Include="KeyBindingSetting.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="Patches\ChangeTickScale.cs" />
-    <Compile Include="Patches\TickColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

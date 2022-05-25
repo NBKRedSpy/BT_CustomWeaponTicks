@@ -13,5 +13,8 @@ namespace BT_CustomWeaponTicks
         public float zScale { get; set; } = 1f;
         public float maxIndividualScale { get; set; } = 2f;
 
+        public KeyBindingSetting NextColorKeyBinding {get;set;}
+
+
     }
 }
