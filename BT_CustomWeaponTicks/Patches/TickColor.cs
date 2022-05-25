@@ -21,14 +21,16 @@ namespace BT_CustomWeaponTicks.Patches
 
             try
             {
+
+                //Reset if no colors
+                if (Core.ModSettings.ColorSets.Count == 0) return;
+
                 Biome.BIOMESKIN currentBiome = UnityGameInstance.BattleTechGame.Combat.ActiveContract.ContractBiome;
 
                 if (LastBiome.GetValueOrDefault(Biome.BIOMESKIN.UNDEFINED) == currentBiome)
                 {
                     return;
                 }
-
-
 
                 UIColorRef colorRef = new UIColorRef()
                 {

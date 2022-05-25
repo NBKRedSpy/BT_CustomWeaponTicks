@@ -24,21 +24,29 @@ namespace BT_CustomWeaponTicks
             }
         }
 
-        public static PlayerAction SelectNextLineOfFireColor;
+        public static PlayerAction SelectNextTickColor;
 
 
         [HarmonyPatch(typeof(UIManager), "Update")]
         public static class UIManager_Patch
         {
+
+            //Debug
+            public static bool _logged;
+
             public static void Prefix(UIManager __instance)
             {
                 try
                 {
                     if (!Core.ModSettings.NextColorKeyBinding.Active) return;
 
-                    if (SelectNextLineOfFireColor.WasReleased)
+                    if (SelectNextTickColor.WasReleased)
                     {
-                        Logger.Log($"Key bind executed");
+                        if (Core.ModSettings.ColorSets.Count == 0) return;
+
+                        ColorSet colorSet = Core.ModSettings.ColorSets.Next();
+
+                        colorSet.SetTickColors(__instance);
                     }
                 }
                 catch (Exception ex)
@@ -60,8 +68,8 @@ namespace BT_CustomWeaponTicks
                     if (Core.ModSettings.NextColorKeyBinding.Active)
                     {
                             var adapter = new DynamicActionsAdapter(__result);
-                            SelectNextLineOfFireColor = adapter.CreatePlayerAction("Select next tick color");
-                            SelectNextLineOfFireColor.AddDefaultBinding(Core.ModSettings.NextColorKeyBinding.Keys);
+                            SelectNextTickColor = adapter.CreatePlayerAction("Select next tick color");
+                            SelectNextTickColor.AddDefaultBinding(Core.ModSettings.NextColorKeyBinding.Keys);
                             Logger.Log("Keybind added");
                     }
                 }

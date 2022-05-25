@@ -65,6 +65,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorSet.cs" />
+    <Compile Include="ColorSetList.cs" />
     <Compile Include="KeyBindingsPatch.cs" />
     <Compile Include="KeyBindingSetting.cs" />
     <Compile Include="Core.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Logger.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="Patches\ChangeTickScale.cs" />
+    <Compile Include="Patches\TickColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,7 +85,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y "$(TargetPath)" "E:\Games\Steam\steamapps\common\BATTLETECH\Mods\$(ProjectName)\"
-robocopy /xc /xn /xo . "E:\Games\Steam\steamapps\common\BATTLETECH\Mods\$(ProjectName)\\" mod.json
+rem robocopy /xc /xn /xo . "E:\Games\Steam\steamapps\common\BATTLETECH\Mods\$(ProjectName)\\" mod.json
+robocopy . "E:\Games\Steam\steamapps\common\BATTLETECH\Mods\$(ProjectName)\\" mod.json
 
 rd /q /s  $(ProjectName)
 robocopy . $(ProjectName) $(ProjectName).dll mod.json

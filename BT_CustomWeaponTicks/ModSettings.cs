@@ -22,5 +22,7 @@ namespace BT_CustomWeaponTicks
             Keys = new KeyCombo(Key.Shift, Key.T),
         };
 
+        public ColorSetList ColorSets { get; set; } = new ColorSetList();
+
     }
 }
