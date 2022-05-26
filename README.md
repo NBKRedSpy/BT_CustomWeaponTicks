@@ -1,7 +1,7 @@
 # BT_CustomWeaponTicks
-Customizes the color and size of the weapon range ticks in combat.
+Customizes the color and size of the weapon range ticks in combat.  There can be multiple color sets to improve visibility for maps with various colors.
 
-Makes the weapon range ticks easier to see by allows custom colors.  By default there are three color sets defined:
+By default, three color sets defined:
 * Battletech default colors
 * Lunar visibility colors
 * Desert visibility colors
@@ -25,12 +25,14 @@ Setting|Default|Description|
 
 ### Color Sets
 The colorSets array contains the colors to use.  Each object in the array is a color set.
-There must be at least one color set, but there is no limit and the amount that can be defined.
+There must be at least one color set, but there is no limit to the color set count.
+
+All colors use the common RGB hex format.  For example, Red is FF0000.
 
 |Setting|Description|
 |-|-|
 ```isDefault ``` | True for the color set to default to .  If multiple are set then the first ```isDefault ``` set will be used.
-```Description ``` | A friendly description used for user clarity.
+```Description ``` | A friendly description used for user clarity when editing the mod.json .
 ```TickMarkOptimal ``` | Hex color for weapons in range.
 ```TickMarkNonOptimal ``` | Hex color for weapons in non-optimal range.
 ```TickMarkTargetedOptimal ``` | Hex color for weapons in range in first person  targeting mode.
@@ -42,7 +44,7 @@ The tick size defaults to Battletech's default.
 
 Setting| Default | Description
 |-|-|-|
-|```xScale2 ``` | -1 | The width of the chevron.
+|```xScale ``` | -1 | The width of the chevron.
 |```yScale ``` | 1.5 |The height of the chevron
 |```zScale ``` |  1 |The Z scale sent to the vector.  Not sure how it applies to a 2D element.  Just set to 1
 |```maxIndividualScale```| 1.5 | Limits the growth of the ticks.
