@@ -31,9 +31,6 @@ namespace BT_CustomWeaponTicks.Patches
         public static class UIManager_Patch
         {
 
-            //Debug
-            public static bool _logged;
-
             public static void Prefix(UIManager __instance)
             {
                 try

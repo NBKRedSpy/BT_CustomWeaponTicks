@@ -15,11 +15,10 @@ namespace BT_CustomWeaponTicks
         public float zScale { get; set; } = 1f;
         public float maxIndividualScale { get; set; } = 2f;
 
-        //Debug - hardcode to shift b
         public KeyBindingSetting NextColorKeyBinding { get; set; } = new KeyBindingSetting()
         {
             active = true,
-            Keys = new KeyCombo(Key.Shift, Key.T),
+            Keys = new KeyCombo(Key.Control, Key.T),
         };
 
         public ColorSetList ColorSets { get; set; } = new ColorSetList();

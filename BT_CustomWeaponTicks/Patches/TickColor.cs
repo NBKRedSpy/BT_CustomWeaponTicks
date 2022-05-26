@@ -40,17 +40,6 @@ namespace BT_CustomWeaponTicks.Patches
                     return;
                 }
 
-
-                //debug
-                //UIColorRef colorRef = new UIColorRef()
-                //{
-                //    color = Color.blue,
-                //    UIColor = UIColor.Custom,
-                //};
-                // ___uiManager.UILookAndColorConstants.TickMarkOptimal = colorRef;
-
-                //Logger.Log($"Color set ");
-
             }
             catch (Exception ex)
             {
