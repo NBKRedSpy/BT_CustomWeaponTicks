@@ -16,11 +16,12 @@ The user is able to cycle through the color schemes during combat using Ctrl+T
 ### Hotkey
 The hotkey to cycle the tick colors defaults to Ctr+T, but can be changed via the nextColorKeyBinding value.
 
-Setting|Default|Description
-active|true|enables the hotkey.  Leave as true.
-keys|Ctrl + T| The hotkey to use to cycle the colors
+The binding will be displayed in Battletech's key configuration screen, but currently cannot be changed.
 
-Setting|Default|Description
+Setting|Default|Description|
+|--|--|--|
+```active```|true|enables the hotkey.  Leave as true.
+```keys```|Ctrl + T| The hotkey to use to cycle the colors
 
 ### Color Sets
 The colorSets array contains the colors to use.  Each object in the array is a color set.
@@ -28,12 +29,12 @@ There must be at least one color set, but there is no limit and the amount that 
 
 |Setting|Description|
 |-|-|
-isDefault | True for the color set to default to .  If multiple are set then the first IsDefault set will be used.
-Description | A friendly description used for user clarity.
-TickMarkOptimal | Hex color for weapons in range.
-TickMarkNonOptimal | Hex color for weapons in non-optimal range.
-TickMarkTargetedOptimal | Hex color for weapons in range in "over the shoulder" targeting mode.
-TickMarkTargetedNonOptimal | Hex color for weapons in non-optimal range in "over the shoulder" targeting mode.
+```isDefault ``` | True for the color set to default to .  If multiple are set then the first ```isDefault ``` set will be used.
+```Description ``` | A friendly description used for user clarity.
+```TickMarkOptimal ``` | Hex color for weapons in range.
+```TickMarkNonOptimal ``` | Hex color for weapons in non-optimal range.
+```TickMarkTargetedOptimal ``` | Hex color for weapons in range in first person  targeting mode.
+```TickMarkTargetedNonOptimal ``` | Hex color for weapons in non-optimal range in first person targeting mode.
 
 ## Tick Size
 
@@ -54,3 +55,7 @@ This assumes ModTek has been installed and injected.
 
 # Compatibility
 This should be compatible with all mods.
+
+# Thanks
+
+Special thanks to janxious, who's BTMLColorLOSMod mod I pulled the hotkey binding from.  
