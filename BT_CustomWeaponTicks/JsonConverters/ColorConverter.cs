@@ -13,27 +13,40 @@ namespace BT_CustomWeaponTicks.JsonConverters
     {
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(Color);
+            return Type.Equals(objectType, typeof(Color));
         }
 
         public override bool CanWrite => false;
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
+            string colorString = (string)reader.Value;
 
-            JArray array = JArray.Load(reader);
+            Logger.Log($"color: {colorString}");
 
-            int[] colors = array.ToObject<int[]>();
-
-
-            Color color = new Color(colors[0] / 255f, colors[1] / 255f, colors[2] / 255f);
-
-            return color;
+            return HexToColor(colorString);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Converts the hex colors eg (0099FF) to Unreal's float format.
+        /// </summary>
+        private Color HexToColor(string hexColorCode)
+        {
+
+            List<byte> rgbBytes = new List<byte>();
+
+
+            for (int i = 0; i < 6; i += 2)
+            {
+                rgbBytes.Add(Convert.ToByte (hexColorCode.Substring(i, 2), 16));
+            }
+
+            return new Color(rgbBytes[0] / 255f, rgbBytes[1] / 255f, rgbBytes[2] / 255f);
         }
     }
 }
