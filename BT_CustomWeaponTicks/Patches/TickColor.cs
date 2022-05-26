@@ -16,9 +16,6 @@ namespace BT_CustomWeaponTicks.Patches
 
         public static bool ColorInited { get; set; } = false;
 
-        public static Biome.BIOMESKIN? LastBiome { get; set; } //The last biome that was loaded.
-
-
         public static void Prefix(CombatHUDWeaponTickMarks __instance, UIManager ___uiManager)
         {
 
@@ -29,17 +26,13 @@ namespace BT_CustomWeaponTicks.Patches
 
                 if (ColorInited == false)
                 {
-                    Core.ModSettings.ColorSets[0].SetTickColors(___uiManager);
+                    ColorSet defaultColor = Core.ModSettings.ColorSets.FirstOrDefault(x => x.IsDefault) ?? 
+                        Core.ModSettings.ColorSets[0];
+
+                    defaultColor.SetTickColors(___uiManager);
+
                     ColorInited = true;
                 }
-
-                Biome.BIOMESKIN currentBiome = UnityGameInstance.BattleTechGame.Combat.ActiveContract.ContractBiome;
-
-                if (LastBiome.GetValueOrDefault(Biome.BIOMESKIN.UNDEFINED) == currentBiome)
-                {
-                    return;
-                }
-
             }
             catch (Exception ex)
             {

@@ -22,6 +22,7 @@
 
     "colorSets": [
       {
+        "isDefault":  false,
         "Description": "Default",
         "TickMarkOptimal": "F79B26",
         "TickMarkNonOptimal": "A1A1A1",
@@ -29,18 +30,20 @@
         "TickMarkTargetedNonOptimal": "D0A44E",
       },
       {
+        "isDefault": false,
         "Description": "Lunar Colors",
-        "TickMarkOptimal": "FF005D",
-        "TickMarkNonOptimal": "5D00FF",
-        "TickMarkTargetedOptimal": "FF005D",
-        "TickMarkTargetedNonOptimal": "5D00FF",
+        "TickMarkOptimal": "5D00FF",
+        "TickMarkNonOptimal": "FF005D",
+        "TickMarkTargetedOptimal": "5D00FF",
+        "TickMarkTargetedNonOptimal": "FF005D"
       },
       {
+        "isDefault": false,
         "Description": "Desert",
         "TickMarkOptimal": "5D00FF",
         "TickMarkNonOptimal": "00FF61",
         "TickMarkTargetedOptimal": "5D00FF",
-        "TickMarkTargetedNonOptimal": "00FF61",
+        "TickMarkTargetedNonOptimal": "00FF61"
       },
     ]
 

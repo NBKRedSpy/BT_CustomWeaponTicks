@@ -1,19 +1,50 @@
 # BT_CustomWeaponTicks
-Customizes the size of the weapon range ticks in combat.
+Customizes the color and size of the weapon range ticks in combat.
 
-The width and height can be modified to make the pips easier to see.
+Makes the weapon range ticks easier to see by allows custom colors.  By default there are three color sets defined:
+* Battletech default colors
+* Lunar visibility colors
+* Desert visibility colors
 
-The mod defaults to about 4x larger than the game's default, but is configurable in the mod.json file.
-
-![image](https://user-images.githubusercontent.com/54865934/167947273-ab277ec1-ae9b-444a-9f00-e3782e6a5d56.png)
+The user is able to cycle through the color schemes during combat using Ctrl+T
 
 # mod.json Settings
+
+## Custom Tick Colors
+
+
+### Hotkey
+The hotkey to cycle the tick colors defaults to Ctr+T, but can be changed via the nextColorKeyBinding value.
+
+Setting|Default|Description
+active|true|enables the hotkey.  Leave as true.
+keys|Ctrl + T| The hotkey to use to cycle the colors
+
+Setting|Default|Description
+
+### Color Sets
+The colorSets array contains the colors to use.  Each object in the array is a color set.
+There must be at least one color set, but there is no limit and the amount that can be defined.
+
+|Setting|Description|
+|-|-|
+isDefault | True for the color set to default to .  If multiple are set then the first IsDefault set will be used.
+Description | A friendly description used for user clarity.
+TickMarkOptimal | Hex color for weapons in range.
+TickMarkNonOptimal | Hex color for weapons in non-optimal range.
+TickMarkTargetedOptimal | Hex color for weapons in range in "over the shoulder" targeting mode.
+TickMarkTargetedNonOptimal | Hex color for weapons in non-optimal range in "over the shoulder" targeting mode.
+
+## Tick Size
+
+The tick size defaults to Battletech's default.
+
 Setting| Default | Description
 |-|-|-|
-|```xScale2 ``` | 2 | The width of the chevron.
-|```yScale ``` | 2 |The height of the chevron
+|```xScale2 ``` | -1 | The width of the chevron.
+|```yScale ``` | 1.5 |The height of the chevron
 |```zScale ``` |  1 |The Z scale sent to the vector.  Not sure how it applies to a 2D element.  Just set to 1
-|```maxIndividualScale```| 2 | Generally set to the larger of the xScale or yScale.  Limits the growth of the chevron otherwise.
+|```maxIndividualScale```| 1.5 | Limits the growth of the ticks.
 
 
 # Installation

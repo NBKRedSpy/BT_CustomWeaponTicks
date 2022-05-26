@@ -11,6 +11,7 @@ namespace BT_CustomWeaponTicks
     public class ColorSet
     {
 
+        public bool IsDefault { get; set; } = false;
         public string Description { get; set; }
         public Color TickMarkOptimal { get; set; }
         public Color TickMarkNonOptimal { get; set; }
