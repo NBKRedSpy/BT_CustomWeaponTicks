@@ -1,8 +1,10 @@
-﻿using System;
+﻿using InControl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace BT_CustomWeaponTicks
 {
@@ -12,6 +14,14 @@ namespace BT_CustomWeaponTicks
         public float yScale { get; set; } = 1.5f;
         public float zScale { get; set; } = 1f;
         public float maxIndividualScale { get; set; } = 2f;
+
+        public KeyBindingSetting NextColorKeyBinding { get; set; } = new KeyBindingSetting()
+        {
+            active = true,
+            Keys = new KeyCombo(Key.Control, Key.T),
+        };
+
+        public ColorSetList ColorSets { get; set; } = new ColorSetList();
 
     }
 }

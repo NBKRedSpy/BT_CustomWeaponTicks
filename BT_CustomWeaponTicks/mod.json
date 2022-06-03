@@ -1,6 +1,6 @@
 {
   "Name": "BT_CustomWeaponTicks",
-  "Version": "1.0.0.0",
+  "Version": "1.1.0.0",
   "Description": "Changes the size of the weapon ticks preview in combat.",
   "Author": "NBK_RedSpy",
   "Website": "https://github.com/NBKRedSpy/BT_CustomWeaponTicks",
@@ -13,7 +13,40 @@
     "xScale": -1,
     "yScale": 1.5,
     "zScale": 1,
-    "maxIndividualScale": 2
+    "maxIndividualScale": 2,
+
+    "nextColorKeyBinding": {
+      "active": true,
+      "keys": [ "Control", "t" ]
+    },
+
+    "colorSets": [
+      {
+        "isDefault":  false,
+        "Description": "Default",
+        "TickMarkOptimal": "F79B26",
+        "TickMarkNonOptimal": "A1A1A1",
+        "TickMarkTargetedOptimal": "F04228",
+        "TickMarkTargetedNonOptimal": "D0A44E",
+      },
+      {
+        "isDefault": false,
+        "Description": "Lunar Colors",
+        "TickMarkOptimal": "5D00FF",
+        "TickMarkNonOptimal": "FF005D",
+        "TickMarkTargetedOptimal": "5D00FF",
+        "TickMarkTargetedNonOptimal": "FF005D"
+      },
+      {
+        "isDefault": false,
+        "Description": "Desert",
+        "TickMarkOptimal": "5D00FF",
+        "TickMarkNonOptimal": "00FF61",
+        "TickMarkTargetedOptimal": "5D00FF",
+        "TickMarkTargetedNonOptimal": "00FF61"
+      },
+    ]
+
   }
 
 }
