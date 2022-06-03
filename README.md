@@ -1,10 +1,13 @@
 # BT_CustomWeaponTicks
 Customizes the color and size of the weapon range ticks in combat.  There can be multiple color sets to improve visibility for maps with various colors.
 
-By default, three color sets defined:
+There are multiple color sets defined by default:
 * Battletech default colors
 * Lunar visibility colors
 * Desert visibility colors
+
+![image](Media/Banner.png)
+
 
 The user is able to cycle through the color schemes during combat using Ctrl+T
 
